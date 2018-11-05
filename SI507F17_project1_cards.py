@@ -37,7 +37,8 @@ class Deck(object):
         for card in self.cards:
             total.append(card.__str__())
         # shows up in whatever order the cards are in
-        return "\n".join(total) # returns a multi-line string listing each card
+        # return "\n".join(total) # returns a multi-line string listing each card
+        return "{rank} of {suit}".format({"rank": self.rank, "suit": self.suit})
 
     def pop_card(self, i=-1): 
         return self.cards.pop(i) # this card is no longer in the deck -- taken off
